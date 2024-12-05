@@ -12,9 +12,9 @@ import unittest
 class DieTestSuite(unittest.TestCase):
     
     def test_1_die_init(self):
-        '''
+        """
         Test Die object is created with user faces and default weights.
-        '''
+        """
         
         # create test objects
         d1 = Die(np.array([1,2,3,4,5,6]))
@@ -31,9 +31,9 @@ class DieTestSuite(unittest.TestCase):
 
     
     def test_2_die_change_weights(self):
-        '''
+        """
         Test change_weights() changes weights to self.settings and self.weights
-        '''
+        """
         
         # create test objects
         d1 = Die(np.array([1,2,3,4,5,6]))
@@ -48,9 +48,9 @@ class DieTestSuite(unittest.TestCase):
         
     
     def test_3_die_roll_die(self):
-        '''
+        """
         Test roll die outputs an integer value.
-        '''
+        """
         # create test objects
         d1 = Die(np.array([1,2,3,4,5,6]))
         
@@ -62,9 +62,9 @@ class DieTestSuite(unittest.TestCase):
     
     
     def test_4_die_show_state(self):
-        '''
+        """
         Test show state outputs a dataframe type.
-        '''
+        """
         # create test objects
         d1 = Die(np.array([1,2,3,4,5,6]))
         
@@ -76,9 +76,9 @@ class DieTestSuite(unittest.TestCase):
     
     
     def test_5_die_str(self):
-        '''
+        """
         Test string representation of Die object is correct.
-        '''
+        """
         # create test objects
         d1 = Die(np.array([1,2,3,4,5,6]))
         obj_str = str(d1)
@@ -98,9 +98,9 @@ class DieTestSuite(unittest.TestCase):
 class GameTestSuite(unittest.TestCase):
     
     def test_6_game_init(self):
-        '''
+        """
         Test game object is correctly initialized with dice objects.
-        '''
+        """
         # create test objects
         d1 = Die(np.array([1,2,3,4,5,6]))
         d2 = Die(np.array([1,2,3,4,5,6]))
@@ -116,9 +116,9 @@ class GameTestSuite(unittest.TestCase):
 
 
     def test_7_game_play_game(self):
-        '''
+        """
         Test play_game stores results as dataframe.
-        '''
+        """
         # create test objects
         d1 = Die(np.array([1,2,3,4,5,6]))
         d2 = Die(np.array([1,2,3,4,5,6]))
@@ -135,9 +135,9 @@ class GameTestSuite(unittest.TestCase):
     
     
     def test_8_game_show_results(self):
-        '''
+        """
         Test show_results is dataframe type with wide and narrow.
-        '''
+        """
         # create test objects
         d1 = Die(np.array([1,2,3,4,5,6]))
         d2 = Die(np.array([1,2,3,4,5,6]))
@@ -156,9 +156,9 @@ class GameTestSuite(unittest.TestCase):
     
     
     def test_9_game_str(self):
-        '''
+        """
         Test string representation of Game object is correct.
-        '''
+        """
         # create test objects
         d1 = Die(np.array([1,2,3,4,5,6]))
         d2 = Die(np.array([1,2,3,4,5,6]))
@@ -181,9 +181,9 @@ class GameTestSuite(unittest.TestCase):
 class AnalyzerTestSuite(unittest.TestCase):
     
     def test_10_analyzer_init(self):
-        '''
+        """
         Test initializer works with game object and stores game correctly.
-        '''
+        """
         # create test objects
         d1 = Die(np.array([1,2,3,4,5,6]))
         d2 = Die(np.array([1,2,3,4,5,6]))
@@ -198,9 +198,9 @@ class AnalyzerTestSuite(unittest.TestCase):
     
     
     def test_11_analyzer_jackpot_counts(self):
-        '''
+        """
         Test jackpot_counts() outputs an integer.
-        '''
+        """
         # create test objects
         d1 = Die(np.array([1,2,3,4,5,6]))
         d2 = Die(np.array([1,2,3,4,5,6]))
@@ -216,9 +216,9 @@ class AnalyzerTestSuite(unittest.TestCase):
     
     
     def test_12_analyzer_face_counts(self):
-        '''
+        """
         Test face_counts() method outputs dataframe type.
-        '''
+        """
         # create test objects
         d1 = Die(np.array([1,2,3,4,5,6]))
         d2 = Die(np.array([1,2,3,4,5,6]))
@@ -238,9 +238,9 @@ class AnalyzerTestSuite(unittest.TestCase):
     
     
     def test_13_analyzer_combo_counts(self):
-        '''
+        """
         Test combo_counts() method outputs dataframe type with multi index.
-        '''
+        """
         # create test objects
         d1 = Die(np.array([1,2,3,4,5,6]))
         d2 = Die(np.array([1,2,3,4,5,6]))
@@ -257,9 +257,9 @@ class AnalyzerTestSuite(unittest.TestCase):
     
     
     def test_14_analyzer_permutations(self):
-        '''
+        """
         Test permutations() method outputs dataframe type with multi index.
-        '''
+        """
         # create test objects
         d1 = Die(np.array([1,2,3,4,5,6]))
         d2 = Die(np.array([1,2,3,4,5,6]))
@@ -276,9 +276,9 @@ class AnalyzerTestSuite(unittest.TestCase):
     
     
     def test_15_analyzer_str(self):
-        '''
+        """
         Test string representation of Analyzer object is correct.
-        '''
+        """
         # create test objects
         d1 = Die(np.array([1,2,3,4,5,6]))
         d2 = Die(np.array([1,2,3,4,5,6]))

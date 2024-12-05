@@ -1,1 +1,1 @@
-from . mcs import Die, Game, Analyzer
+print('Monte Carlo Simulator Classes.')

@@ -42,7 +42,7 @@ class Die:
 
 
     def __init__(self, faces):
-        '''
+        """
         Initialize an equal weighted Die object with given distinct faces.
 
         Parameters
@@ -60,7 +60,7 @@ class Die:
             If faces is not a numpy array data type.
         ValueError
             If values in faces are not distinct values.
-        '''
+        """
         
         # return TypeError if not a numpy array
         if not isinstance(faces, np.ndarray):
@@ -84,7 +84,7 @@ class Die:
 
 
     def change_weights(self, face, weight):
-        '''
+        """
         Change the weight of a given face from a Die object. Only supports
         one weight change at a time.
 
@@ -105,7 +105,7 @@ class Die:
             If given face value is not in the Die object's faces.
         TypeError
             If given weight is not numeric (integer or float) or castable as numeric.
-        '''
+        """
         
         # check if face passed is a valid value in the die and raises IndexError
         if not np.isin(face, self.faces):
@@ -127,7 +127,7 @@ class Die:
 
 
     def roll_die(self, num_rolls=1):
-        '''
+        """
         Roll a Die object a given number of times. A random sample with
         replacement is generated that applies the associated weight.
 
@@ -140,7 +140,7 @@ class Die:
         -------
         results : list
             A list of outcomes from a given number of rolls.
-        '''
+        """
 
         # make sure rolls entered is not less than 1
         if num_rolls < 1:
@@ -157,14 +157,14 @@ class Die:
 
 
     def show_state(self):
-        '''
+        """
         Displays all the faces and weights associated with Die object.
 
         Returns
         -------
         states : dataframe
             A dataframe with faces and associated weights.
-        '''
+        """
 
         # return copy of private dataframe with faces and weights of die
         states = self._settings.copy(deep=True)
@@ -173,14 +173,14 @@ class Die:
 
 
     def __str__(self):
-        '''
+        """
         Create string representation of class to check for
         class type in other objects
 
         Returns
         -------
         str rep of die object
-        '''
+        """
         
         return 'Die'
 
@@ -220,7 +220,7 @@ class Game:
     
     
     def __init__(self, dice):
-        '''
+        """
         Initialize a Game object to perform game actions on one
         or more given Die objects.
 
@@ -241,7 +241,7 @@ class Game:
             If die are not a list of Die objects
         ValueError
             If die do not all have the same face number and values.
-        '''
+        """
 
         # make sure game object is initialized with list of dice objects
         if not isinstance(dice, list):
@@ -265,7 +265,7 @@ class Game:
 
 
     def play_game(self, rolls):
-        '''
+        """
         Rolls Die objects a given number of times and compile results.
 
         Parameters
@@ -276,7 +276,7 @@ class Game:
         Returns
         -------
         None.
-        '''
+        """
         
         # make sure rolls entered is not less than 1
         if rolls < 1:
@@ -309,7 +309,7 @@ class Game:
 
 
     def show_results(self, form='wide'):
-        '''
+        """
         Display dataframe of results of rolls, faces, and outcomes
         from game play.
 
@@ -331,7 +331,7 @@ class Game:
         ------
         ValueError
             If given form is not 'narrow' or 'wide'.
-        '''
+        """
         
         # get copy of private dataframe to format for output
         results = self._game_results.copy(deep=True)
@@ -362,14 +362,14 @@ class Game:
         
         
     def __str__(self):
-        '''
+        """
         Create string representation of class to check for
         class type in other objects
 
         Returns
         -------
         str rep of game object
-        '''
+        """
         
         return 'Game'
 
@@ -408,7 +408,7 @@ class Analyzer:
 
     
     def __init__(self, game):
-        '''
+        """
         Initialize an Analyzer object to perform statistics on Game results
         Takes a game object as input parameter.
 
@@ -425,7 +425,7 @@ class Analyzer:
         ------
         ValueError
             If given game parameter is not a Game type object.
-        '''
+        """
         
         # check that game is of game object data type
         # try getting string representation of game class
@@ -446,7 +446,7 @@ class Analyzer:
 
 
     def jackpot_counts(self):
-        '''
+        """
         Compute how many times in a game a roll resulted in which all faces
         were the same (e.g. all die rolled a one).
         
@@ -454,7 +454,7 @@ class Analyzer:
         -------
         counts : int
             The number of times a roll resulted in all the same faces (jackpot).
-        '''
+        """
         
         # get results of rolls from game object
         results = self.game.show_results()
@@ -468,7 +468,7 @@ class Analyzer:
 
 
     def face_counts(self):
-        '''
+        """
         Compute the number of times each face was rolled in each round.
 
         Returns
@@ -476,7 +476,7 @@ class Analyzer:
         face_counts : dataframe
             Dataframe consists of the roll number (rows), face values(columns)
             and the number of times each face value occurred in each roll.
-        '''
+        """
         
         # get faces from dice
         faces = self.game.dice[0].faces
@@ -498,7 +498,7 @@ class Analyzer:
 
 
     def combo_counts(self):
-        '''
+        """
         Computes the unique combinations of faces rolled along with the
         number of times that unique combination occurred.
 
@@ -507,7 +507,7 @@ class Analyzer:
         combos : dataframe
             A dataframe consists of a MultiIndex of distinct combinations
             with a column associated with the number of counts.
-        '''
+        """
 
         # get results from game object
         results = self.game.show_results()
@@ -528,7 +528,7 @@ class Analyzer:
 
 
     def permutations(self):
-        '''
+        """
         Computes unique permutations of faces rolled along with the number
         of times that unique permutation occurred.
 
@@ -537,7 +537,7 @@ class Analyzer:
         perms : dataframe
             A dataframe consisting of a MultiIndex of distinct permutations
             with a column associated with the number of counts.
-        '''
+        """
         
         # get results from game object
         results = self.game.show_results()
@@ -554,13 +554,13 @@ class Analyzer:
     
     
     def __str__(self):
-        '''
+        """
         Create string representation of class to check for
         class type in other objects
 
         Returns
         -------
         str rep of analyzer object
-        '''
+        """
         
         return 'Analyzer'
