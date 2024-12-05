@@ -93,52 +93,35 @@ associated with each class.
 
 **Game Class**
 
-- Game(faces : np.ndarray)
-    - Description: Initializes die with given faces
-    - Parameters:
-    - Raises:
-    - Attributes:
+- Game(dice : list)
+    - Description: Initializes a Game object with list of Dice objects.
+    - Parameters: `dice` a list of valid Die objects.
+    - Raises: `TypeError` if die are not a list of Die objects and `ValueError` if die do not all have the same face number and values.
     
-- play_game(faces : np.ndarray)
-    - Description: Initializes die with given faces
-    - Parameters:
-    - Raises:
-    - Attributes:
+- play_game(rolls : int)
+    - Description: Rolls all dice a given number of times and stores results.
+    - Parameters: `rolls` number of times to roll die.
     
-- show_results(faces : np.ndarray)
-    - Description: Initializes die with given faces
-    - Parameters:
-    - Raises:
-    - Attributes:
+- show_results(form='wide' : str)
+    - Description: Returns dataframe of results from game play in narrow or wide format
+    - Parameters: `form` must be string of 'wide' or 'narrow'
+    - Raises: `ValueError` if term is not 'wide' or 'narrow'
 
 **Analyzer Class**
 
-- Analyzer(faces : np.ndarray)
-    - Description: Initializes die with given faces
-    - Parameters:
-    - Raises:
-    - Attributes:
+- Analyzer(game : Game object)
+    - Description: Initializes Analyzer object with Game object results and information.
+    - Parameters: `game` must be a single Game object type.
+    - Raises: `ValueError` if not of Game object type.
 
-- jackpot_counts(faces : np.ndarray)
-    - Description: Initializes die with given faces
-    - Parameters:
-    - Raises:
-    - Attributes:
+- jackpot_counts()
+    - Description: Counts the number of times a roll resulted in all the same face value and returns integer count value.
 
-- face_counts(faces : np.ndarray)
-    - Description: Initializes die with given faces
-    - Parameters:
-    - Raises:
-    - Attributes:
+- face_counts()
+    - Description: Computes the number of times each face was rolled in each round and returns dataframe of results.
 
-- combo_counts(faces : np.ndarray)
-    - Description: Initializes die with given faces
-    - Parameters:
-    - Raises:
-    - Attributes:
+- combo_counts()
+    - Description: Computes the unique combinations of faces rolled along with the number of times that unique combination occurred and returns result in a dataframe.
     
-- permutations(faces : np.ndarray)
-    - Description: Initializes die with given faces
-    - Parameters:
-    - Raises:
-    - Attributes:
+- permutations()
+    - Description: Computes unique permutations of faces rolled along with the number of times that unique permutation occurred and returns results in a dataframe.
