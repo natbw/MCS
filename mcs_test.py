@@ -1,4 +1,4 @@
-from src.mcs import Die, Game, Analyzer
+from montecarlo.mcs import Die, Game, Analyzer
 import pandas as pd
 import numpy as np
 import unittest
