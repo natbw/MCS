@@ -21,23 +21,41 @@ such as frequent rolls as well as unique combinations and permutations.
 
 ## Synopsis
 
-
-
 **Installation**
 
+To install use the following command:
 
-
-
+`pip install .`
 
 **Importing Classes**
 
+To import the package:
 
-
-
+`montecarlo.msc import Die, Game, Analyzer`
 
 **Usage**
 
+Create a Die object:
 
+```import numpy as np
+
+faces = np.array([1,2,3,4,5,6])
+d1 = Die(faces)
+```
+
+Create a Game object:
+
+```d1 = Die(np.array([1,2,3,4,5,6]))
+d2 = Die(np.array([1,2,3,4,5,6]))
+
+game = Game([d1,d2])
+```
+
+Create an Analyzer:
+
+```game = Game([d1,d2])
+analyzer = Analyzer(game)
+```
 
 
 
