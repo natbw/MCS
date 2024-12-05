@@ -37,7 +37,8 @@ To import the package:
 
 Create a Die object:
 
-```import numpy as np
+```
+import numpy as np
 
 faces = np.array([1,2,3,4,5,6])
 d1 = Die(faces)
@@ -45,7 +46,8 @@ d1 = Die(faces)
 
 Create a Game object:
 
-```d1 = Die(np.array([1,2,3,4,5,6]))
+```
+d1 = Die(np.array([1,2,3,4,5,6]))
 d2 = Die(np.array([1,2,3,4,5,6]))
 
 game = Game([d1,d2])
@@ -53,7 +55,8 @@ game = Game([d1,d2])
 
 Create an Analyzer:
 
-```game = Game([d1,d2])
+```
+game = Game([d1,d2])
 analyzer = Analyzer(game)
 ```
 
