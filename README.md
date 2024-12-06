@@ -29,9 +29,9 @@ To install use the following command:
 
 **Importing Classes**
 
-To import the package:
+To import the package with each class:
 
-`montecarlo.msc import Die, Game, Analyzer`
+`from montecarlo.msc import Die, Game, Analyzer`
 
 **Usage**
 
